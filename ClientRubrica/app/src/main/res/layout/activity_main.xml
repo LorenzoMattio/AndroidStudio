@@ -7,41 +7,42 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_carica"
+        android:id="@+id/btnCarica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_carica"
-        app:layout_constraintBottom_toTopOf="@+id/btn_elimina"
-        app:layout_constraintStart_toStartOf="@+id/btn_elimina"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
+        android:layout_marginTop="165dp"
+        android:text="Carica"
+        app:layout_constraintEnd_toEndOf="@+id/btnOrdina"
+        app:layout_constraintStart_toStartOf="@+id/btnOrdina"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_ordina"
+        android:id="@+id/btnElimina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_carica"
-        app:layout_constraintBottom_toTopOf="@+id/btn_elimina"
-        app:layout_constraintStart_toStartOf="@+id/btn_elimina"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.807" />
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="54dp"
+        android:text="Elimina"
+        app:layout_constraintStart_toStartOf="@+id/btnCarica"
+        app:layout_constraintTop_toBottomOf="@+id/btnCarica" />
 
     <Button
-        android:id="@+id/btn_elimina"
+        android:id="@+id/btnVisualizza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:text="@string/btn_elimina"
-        app:layout_constraintBottom_toTopOf="@+id/btn_visualizza"
-        app:layout_constraintStart_toStartOf="@+id/btn_visualizza" />
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="69dp"
+        android:text="Visualizza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnElimina" />
 
     <Button
-        android:id="@+id/btn_visualizza"
+        android:id="@+id/btnOrdina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="261dp"
-        android:text="@string/btn_visualizza"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="82dp"
+        android:text="Ordina"
+        app:layout_constraintStart_toStartOf="@+id/btnVisualizza"
+        app:layout_constraintTop_toBottomOf="@+id/btnVisualizza" />
 </androidx.constraintlayout.widget.ConstraintLayout>

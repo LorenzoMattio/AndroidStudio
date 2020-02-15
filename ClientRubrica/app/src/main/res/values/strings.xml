@@ -1,9 +1,3 @@
 <resources>
     <string name="app_name">ClientRubrica</string>
-    <string name="btn_visualizza">Visualizza</string>
-    <string name="btn_carica">Carica</string>
-    <string name="btn_elimina">Elimina</string>
-    <string name="btn_visualizza">Visualizza</string>
-    <string name="btn_ordina">Ordina</string>
-
 </resources>
