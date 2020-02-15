@@ -7,11 +7,10 @@
     tools:context=".Activity_visualizza">
 
     <TextView
-        android:id="@+id/txtLista"
+        android:id="@+id/txtVisualizza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="345dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="TextView"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="342dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

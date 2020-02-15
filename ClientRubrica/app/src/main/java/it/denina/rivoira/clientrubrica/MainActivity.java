@@ -7,8 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 
@@ -41,7 +46,29 @@ public class MainActivity extends AppCompatActivity {
         btnVisualizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                StringRequest request = new StringRequest(Request.Method.POST, server + "/visualizza", new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        intent = new Intent(getApplicationContext(), Activity_visualizza.class);
+                        intent.putExtra("dati", response);
+                        startActivity(intent);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+                coda.add(request);
+            }
+        });
 
+        btnElimina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplicationContext(), Activity_elimina.class);
+                intent.putExtra("server", server);
+                startActivity(intent);
             }
         });
     }
