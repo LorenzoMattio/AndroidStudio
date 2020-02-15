@@ -2,7 +2,6 @@ package it.denina.rivoira.clientrubrica;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnOrdina = null;
     private Button btnCarica = null;
     private Button btnElimina = null;
-    private RequestQueue coda = null;
+    private RequestQueue requestQueue = null;
     private Intent intent = null;
     public String server = "http://192.168.76.206:1391";
 
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnVisualizza = findViewById(R.id.btnVisualizza);
         btnOrdina = findViewById(R.id.btnOrdina);
         btnElimina = findViewById(R.id.btnElimina);
-        coda = Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
     }
 
     @Override
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
-                coda.add(request);
+                requestQueue.add(request);
             }
         });
 
@@ -75,9 +74,28 @@ public class MainActivity extends AppCompatActivity {
         btnCarica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), Activity_Carica.class);
+                intent = new Intent(getApplicationContext(), Activity_carica.class);
                 intent.putExtra("server", server);
                 startActivity(intent);
+            }
+        });
+
+        btnOrdina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringRequest request = new StringRequest(Request.Method.POST, server + "/ordina", new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+                requestQueue.add(request);
+                Toast.makeText(getApplicationContext(), "RUBRICA ORDINATA!", Toast.LENGTH_SHORT).show();
             }
         });
     }

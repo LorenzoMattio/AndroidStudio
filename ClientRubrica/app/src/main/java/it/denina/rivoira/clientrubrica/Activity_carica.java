@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Activity_Carica extends AppCompatActivity {
+public class Activity_carica extends AppCompatActivity {
 
     private Button btnCarica = null;
     private EditText edtCognome = null;
